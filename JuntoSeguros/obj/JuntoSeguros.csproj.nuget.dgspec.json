@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj": {}
+    "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\JuntoSeguros.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj": {
+    "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\JuntoSeguros.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj",
+        "projectUniqueName": "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\JuntoSeguros.csproj",
         "projectName": "JuntoSeguros",
-        "projectPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj",
-        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\obj\\",
+        "projectPath": "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\JuntoSeguros.csproj",
+        "packagesPath": "C:\\Users\\renatorv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\renatorv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

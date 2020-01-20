@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\XUnitTestJuntosSeg\\XUnitTestJuntosSeg.csproj": {}
+    "C:\\Users\\renatorv\\Desktop\\jseg\\XUnitTestJuntosSeg\\XUnitTestJuntosSeg.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj": {
+    "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\JuntoSeguros.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj",
+        "projectUniqueName": "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\JuntoSeguros.csproj",
         "projectName": "JuntoSeguros",
-        "projectPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj",
-        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\obj\\",
+        "projectPath": "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\JuntoSeguros.csproj",
+        "packagesPath": "C:\\Users\\renatorv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\renatorv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,20 +98,20 @@
         }
       }
     },
-    "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\XUnitTestJuntosSeg\\XUnitTestJuntosSeg.csproj": {
+    "C:\\Users\\renatorv\\Desktop\\jseg\\XUnitTestJuntosSeg\\XUnitTestJuntosSeg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\XUnitTestJuntosSeg\\XUnitTestJuntosSeg.csproj",
+        "projectUniqueName": "C:\\Users\\renatorv\\Desktop\\jseg\\XUnitTestJuntosSeg\\XUnitTestJuntosSeg.csproj",
         "projectName": "XUnitTestJuntosSeg",
-        "projectPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\XUnitTestJuntosSeg\\XUnitTestJuntosSeg.csproj",
-        "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\XUnitTestJuntosSeg\\obj\\",
+        "projectPath": "C:\\Users\\renatorv\\Desktop\\jseg\\XUnitTestJuntosSeg\\XUnitTestJuntosSeg.csproj",
+        "packagesPath": "C:\\Users\\renatorv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\renatorv\\Desktop\\jseg\\XUnitTestJuntosSeg\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\renatorv\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,8 +124,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj": {
-                "projectPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj"
+              "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\JuntoSeguros.csproj": {
+                "projectPath": "C:\\Users\\renatorv\\Desktop\\jseg\\JuntoSeguros\\JuntoSeguros.csproj"
               }
             }
           }
@@ -139,21 +139,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.AspNetCore.TestHost": {
-              "target": "Package",
-              "version": "[3.1.1, )"
-            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.2.0, )"
-            },
-            "Moq": {
-              "target": "Package",
-              "version": "[4.13.1, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[1.0.1, )"
             },
             "xunit": {
               "target": "Package",

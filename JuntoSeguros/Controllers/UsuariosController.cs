@@ -49,7 +49,7 @@ namespace JuntoSeguros.Controllers
             }
             else
             {                
-                return BadRequest(result.Errors.ToList());                
+                return BadRequest(result.Errors.ToList());                  
             }            
         }
 
@@ -63,17 +63,17 @@ namespace JuntoSeguros.Controllers
             }
             else
             {
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                ModelState.AddModelError(string.Empty, "Usuário não encontrado!");
                 return BadRequest(ModelState);
             }
         }
 
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [HttpGet("ListarTodos")]
+        [HttpGet("Listar")]
         public ActionResult<List<ApplicationUser>> GetAllUser()
         {
             var result = _userManager.Users;
-
+            
             result.ToList().ForEach(x => { x.PasswordHash = null; x.EmailConfirmed = false; x.SecurityStamp = null; x.ConcurrencyStamp = null; });
 
             return Ok(result.ToList());
@@ -81,21 +81,27 @@ namespace JuntoSeguros.Controllers
         }
 
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [HttpGet("Buscar")]
-        public ActionResult<List<ApplicationUser>> FindUser([FromBody] UserInfo model)
+        [HttpGet("BuscarPorEmail")]
+        public ActionResult<List<ApplicationUser>> FindUser(string email)
         {
-            var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+            var result = _userManager.Users.Where(x => x.Email == email);
 
-            var result = _userManager.Users.Where(x => x.Email == user.Email);
+            if (result != null)
+            {
+                result.ToList().ForEach(x => { x.PasswordHash = null; x.EmailConfirmed = false; x.SecurityStamp = null; x.ConcurrencyStamp = null; });
+                return Ok(result.ToList());
+            }
+            else
+            {                
+                ModelState.AddModelError(string.Empty, "E-mail não encontrado!");
+                return BadRequest(ModelState);
 
-            result.ToList().ForEach(x => { x.PasswordHash = null; x.EmailConfirmed = false; x.SecurityStamp = null; x.ConcurrencyStamp = null; });
-
-            return result.ToList();
+            }
 
         }
 
         [Authorize(AuthenticationSchemes = "Bearer")]
-        [HttpGet("GetById")]
+        [HttpGet("BuscarPorId")]
         public ActionResult<ApplicationUser> GetById(string id)
         {
             var result = _userManager.Users.Where(x => x.Id == id);
@@ -104,11 +110,12 @@ namespace JuntoSeguros.Controllers
             {
                 result.ToList().ForEach(x => { x.PasswordHash = null; x.EmailConfirmed = false; x.SecurityStamp = null; x.ConcurrencyStamp = null; });
 
-                return result.FirstOrDefault();
+                return Ok(result.FirstOrDefault());
             }
             else
-            {
-                return BadRequest("Verifique o id!");
+            {                
+                ModelState.AddModelError(string.Empty, "Id não encontrado!");
+                return BadRequest(ModelState);
             }
 
         }
@@ -130,7 +137,8 @@ namespace JuntoSeguros.Controllers
             }
             else
             {
-                return BadRequest("Verifique o id!");
+                ModelState.AddModelError(string.Empty, "Id não encontrado!");
+                return BadRequest(ModelState);
             }
         }
 
@@ -142,9 +150,6 @@ namespace JuntoSeguros.Controllers
 
             if (user != null)
             {
-                //result.PasswordHash = user.PasswordHash;
-                //await _userManager.UpdateAsync(result);
-
                 var result = await _userManager.ChangePasswordAsync(user, senhaAntiga, novaSenha);
                 if (result.Succeeded)
                 {
@@ -157,7 +162,8 @@ namespace JuntoSeguros.Controllers
             }
             else
             {
-                return BadRequest("Verifique o id!");
+                ModelState.AddModelError(string.Empty, "Id não encontrado!");
+                return BadRequest(ModelState);
             }
         }
 
@@ -171,10 +177,13 @@ namespace JuntoSeguros.Controllers
             {
                 await _userManager.DeleteAsync(result);
 
-                return "Excluido com sucesso!";
+                return Ok("Excluido com sucesso!");
             }
-
-            return BadRequest("Verifique o id!");
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Id não encontrado!");
+                return BadRequest(ModelState);
+            }           
 
         }
 
