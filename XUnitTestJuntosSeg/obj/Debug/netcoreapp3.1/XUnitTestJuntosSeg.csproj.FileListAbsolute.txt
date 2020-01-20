@@ -10,6 +10,7 @@ C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bi
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\XUnitTestJuntosSeg.runtimeconfig.dev.json
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\XUnitTestJuntosSeg.dll
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\XUnitTestJuntosSeg.pdb
+C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -64,6 +65,7 @@ C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bi
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Moq.dll
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
@@ -213,5 +215,3 @@ C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\ob
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\obj\Debug\netcoreapp3.1\XUnitTestJuntosSeg.csproj.CopyComplete
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\obj\Debug\netcoreapp3.1\XUnitTestJuntosSeg.dll
 C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\obj\Debug\netcoreapp3.1\XUnitTestJuntosSeg.pdb
-C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Castle.Core.dll
-C:\Users\dell\Desktop\testeJuntosSeguro\AvaliacaoJuntosSeg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Moq.dll
