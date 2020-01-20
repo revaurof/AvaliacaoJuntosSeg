@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuntoSeguros", "JuntoSeguros\JuntoSeguros.csproj", "{A593DD71-173A-4520-A8CF-330C173427F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JuntoSeguros", "JuntoSeguros\JuntoSeguros.csproj", "{A593DD71-173A-4520-A8CF-330C173427F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestJuntosSeg", "XUnitTestJuntosSeg\XUnitTestJuntosSeg.csproj", "{DD14D91F-1958-4959-BE38-45EA3C3BCD80}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{A593DD71-173A-4520-A8CF-330C173427F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A593DD71-173A-4520-A8CF-330C173427F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A593DD71-173A-4520-A8CF-330C173427F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD14D91F-1958-4959-BE38-45EA3C3BCD80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD14D91F-1958-4959-BE38-45EA3C3BCD80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD14D91F-1958-4959-BE38-45EA3C3BCD80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD14D91F-1958-4959-BE38-45EA3C3BCD80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

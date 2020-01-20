@@ -5,10 +5,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
-using JuntoSeguros.Context;
 using JuntoSeguros.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -31,12 +29,12 @@ namespace JuntoSeguros.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _configuration = configuration;
-        }
+        }      
 
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return "Controlador UsuariosController :: WebApiUsuarios";
+            return Ok("Controlador UsuariosController :: WebApiUsuarios");
         }
 
         [HttpPost("Criar")]
@@ -78,7 +76,7 @@ namespace JuntoSeguros.Controllers
 
             result.ToList().ForEach(x => { x.PasswordHash = null; x.EmailConfirmed = false; x.SecurityStamp = null; x.ConcurrencyStamp = null; });
 
-            return result.ToList();
+            return Ok(result.ToList());
 
         }
 

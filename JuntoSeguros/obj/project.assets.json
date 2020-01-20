@@ -8665,11 +8665,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\JuntoSeguros\\JuntoSeguros\\JuntoSeguros.csproj",
+      "projectUniqueName": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj",
       "projectName": "JuntoSeguros",
-      "projectPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\JuntoSeguros\\JuntoSeguros\\JuntoSeguros.csproj",
+      "projectPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\JuntoSeguros.csproj",
       "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\JuntoSeguros\\JuntoSeguros\\obj\\",
+      "outputPath": "C:\\Users\\dell\\Desktop\\testeJuntosSeguro\\AvaliacaoJuntosSeg\\JuntoSeguros\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
