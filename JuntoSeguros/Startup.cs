@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using JuntoSeguros.Context;
 using JuntoSeguros.Models;
+using JuntoSeguros.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -23,11 +24,13 @@ namespace JuntoSeguros
         }
 
         public IConfiguration Configuration { get; }
-                
+
         public void ConfigureServices(IServiceCollection services)
         {
+            
+            
             services.AddControllers();
-
+            services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddDbContext<ApplicationDbContext>(options =>
            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -48,9 +51,10 @@ namespace JuntoSeguros
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["jwt:key"])),
                     ClockSkew = TimeSpan.Zero
                 });
+            
 
         }
-                
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

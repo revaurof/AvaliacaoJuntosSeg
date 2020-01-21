@@ -1,0 +1,227 @@
+{
+	"variables": [],
+	"info": {
+		"name": "JuntosSegTeste",
+		"_postman_id": "3870d997-c846-3801-e311-7df8dccf7bb4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:49417/api/Usuarios/criar",
+			"request": {
+				"url": "http://localhost:49417/api/Usuarios/criar",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\" : \"renato@yahoo.com\",\r\n   \"password\" :  \"TesteRenato!123\",\r\n   \"Nome\" : \"Renato\",\r\n   \"Cidade\" : \"Itararé\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:49417/api/usuarios/login",
+			"request": {
+				"url": "http://localhost:49417/api/usuarios/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\" : \"renato@yahoo.com\",\r\n   \"password\" :  \"TesteRenato!123\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:49417/api/usuarios/Listar",
+			"request": {
+				"url": "http://localhost:49417/api/usuarios/Listar",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJlbmF0b0B5YWhvby5jb20iLCJOb21lIjoiVmF1cm9mIiwianRpIjoiYTgyNDZjY2QtODA1YS00ZmJkLWIwZGEtZDdjY2RkOThlN2ZjIiwiZXhwIjoxNTc5NTI4MjMzfQ.-cDak1_PrptT95f52oCxjAGlgpS6bt71uFtVs6yTOww",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:49417/api/usuarios/Atualizar",
+			"request": {
+				"url": "http://localhost:49417/api/usuarios/Atualizar",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJlbmF0b0B5YWhvby5jb20iLCJOb21lIjoiVmF1cm9mIiwianRpIjoiYTgyNDZjY2QtODA1YS00ZmJkLWIwZGEtZDdjY2RkOThlN2ZjIiwiZXhwIjoxNTc5NTI4MjMzfQ.-cDak1_PrptT95f52oCxjAGlgpS6bt71uFtVs6yTOww",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"id\": \"9d8d64de-200d-4432-a8e5-741e41c19e98\",\r\n\t\"Nome\" : \"Renato Vaurof\",\r\n\t\"Cidade\" : \"Itapipoca\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:49417/api/usuarios/BuscarPorEmail?email=renato@yahoo.com",
+			"request": {
+				"url": {
+					"raw": "http://localhost:49417/api/usuarios/BuscarPorEmail?email=renato@yahoo.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49417",
+					"path": [
+						"api",
+						"usuarios",
+						"BuscarPorEmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "renato@yahoo.com",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJlbmF0b0B5YWhvby5jb20iLCJOb21lIjoiVmF1cm9mIiwianRpIjoiYTgyNDZjY2QtODA1YS00ZmJkLWIwZGEtZDdjY2RkOThlN2ZjIiwiZXhwIjoxNTc5NTI4MjMzfQ.-cDak1_PrptT95f52oCxjAGlgpS6bt71uFtVs6yTOww",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\" : \"renato@yahoo.com\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:49417/api/Usuarios/AtualizarSenha?id=09b3525a-b3e7-4db9-bfa2-25f2ac620f87&senhaAntiga=Re5322007!!@&novaSenha=Re5322007!!@12",
+			"request": {
+				"url": {
+					"raw": "http://localhost:49417/api/Usuarios/AtualizarSenha?id=09b3525a-b3e7-4db9-bfa2-25f2ac620f87&senhaAntiga=Re5322007!!@&novaSenha=Re5322007!!@12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49417",
+					"path": [
+						"api",
+						"Usuarios",
+						"AtualizarSenha"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "09b3525a-b3e7-4db9-bfa2-25f2ac620f87",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "senhaAntiga",
+							"value": "Re5322007!!@",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "novaSenha",
+							"value": "Re5322007!!@12",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJlbmF0b0B5YWhvby5jb20iLCJOb21lIjoiVmF1cm9mIiwianRpIjoiYTgyNDZjY2QtODA1YS00ZmJkLWIwZGEtZDdjY2RkOThlN2ZjIiwiZXhwIjoxNTc5NTI4MjMzfQ.-cDak1_PrptT95f52oCxjAGlgpS6bt71uFtVs6yTOww",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:49417/api/usuarios/Excluir?id=9d8d64de-200d-4432-a8e5-741e41c19e98",
+			"request": {
+				"url": {
+					"raw": "http://localhost:49417/api/usuarios/Excluir?id=9d8d64de-200d-4432-a8e5-741e41c19e98",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "49417",
+					"path": [
+						"api",
+						"usuarios",
+						"Excluir"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "9d8d64de-200d-4432-a8e5-741e41c19e98",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJlbmF0b0B5YWhvby5jb20iLCJOb21lIjoiVmF1cm9mIiwianRpIjoiYTgyNDZjY2QtODA1YS00ZmJkLWIwZGEtZDdjY2RkOThlN2ZjIiwiZXhwIjoxNTc5NTI4MjMzfQ.-cDak1_PrptT95f52oCxjAGlgpS6bt71uFtVs6yTOww",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

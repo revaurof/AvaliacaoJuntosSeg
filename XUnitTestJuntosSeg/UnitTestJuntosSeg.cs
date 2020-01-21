@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using JuntoSeguros.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Mvc;
+using JuntoSeguros.Services;
 
 namespace XUnitTestJuntosSeg
 {
@@ -11,21 +12,14 @@ namespace XUnitTestJuntosSeg
     public class UnitTestJuntosSeg
     {
 
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly IConfiguration _configuration;
+        private readonly IUsuarioService _service;
         UsuariosController _controller;
 
 
-        public UnitTestJuntosSeg(UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
-            IConfiguration configuration)
+        public UnitTestJuntosSeg(IUsuarioService service)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
-            _configuration = configuration;
-
-            _controller = new UsuariosController(_userManager, _signInManager, _configuration);
+            _service = service;
+            _controller = new UsuariosController(_service);
         }
 
         [Fact]
@@ -59,7 +53,7 @@ namespace XUnitTestJuntosSeg
         public void UsuariosControllerBuscarPorEmail()
         {
             // Act
-            var okResult = _controller.FindUser("revaurof@yahoo.com.br");
+            var okResult = _controller.FindUserByEmail("revaurof@yahoo.com.br");
             // Assert
             Assert.IsType<OkObjectResult>(okResult.Result);
         }
@@ -72,6 +66,6 @@ namespace XUnitTestJuntosSeg
             // Assert
             Assert.IsType<OkObjectResult>(okResult.Result);
         }
-        
+
     }
 }

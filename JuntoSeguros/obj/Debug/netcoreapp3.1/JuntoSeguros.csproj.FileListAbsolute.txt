@@ -395,10 +395,10 @@ C:\Users\renatorv\Desktop\jseg\JuntoSeguros\bin\Debug\netcoreapp3.1\runtimes\win
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.csprojAssemblyReference.cache
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\staticwebassets\JuntoSeguros.StaticWebAssets.Manifest.cache
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\staticwebassets\JuntoSeguros.StaticWebAssets.xml
-C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.AssemblyInfoInputs.cache
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.AssemblyInfo.cs
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.RazorTargetAssemblyInfo.cache
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.csproj.CopyComplete
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.dll
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.pdb
+C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.MvcApplicationPartsAssemblyInfo.cache

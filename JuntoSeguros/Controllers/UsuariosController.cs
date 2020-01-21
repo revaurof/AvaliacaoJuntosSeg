@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using JuntoSeguros.Models;
+using JuntoSeguros.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -18,18 +20,24 @@ namespace JuntoSeguros.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
-        private readonly UserManager<ApplicationUser> _userManager;
-        private readonly SignInManager<ApplicationUser> _signInManager;
-        private readonly IConfiguration _configuration;
+        private readonly IUsuarioService _service;
 
-        public UsuariosController(UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
-            IConfiguration configuration)
+        //private readonly UserManager<ApplicationUser> _userManager;
+        //private readonly SignInManager<ApplicationUser> _signInManager;
+        //private readonly IConfiguration _configuration;
+
+        //public UsuariosController(UserManager<ApplicationUser> userManager,
+        //    SignInManager<ApplicationUser> signInManager,
+        //    IConfiguration configuration)
+        //{
+        //    _userManager = userManager;
+        //    _signInManager = signInManager;
+        //    _configuration = configuration;
+        //}      
+        public UsuariosController(IUsuarioService service)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
-            _configuration = configuration;
-        }      
+            _service = service;
+        }
 
         [HttpGet]
         public ActionResult<string> Get()
@@ -42,22 +50,22 @@ namespace JuntoSeguros.Controllers
         {
             var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Nome = model.Nome, Cidade = model.Cidade };
 
-            var result = await _userManager.CreateAsync(user, model.Password);
-            if (result.Succeeded)
+            var result = await _service.CreateAsync(user, model.Password);
+            if (result != null && result.Succeeded)
             {
                 return BuildToken(model);
             }
             else
-            {                
-                return BadRequest(result.Errors.ToList());                  
-            }            
+            {
+                return BadRequest(result.Errors.ToList());
+            }
         }
 
         [HttpPost("Login")]
         public async Task<ActionResult<UserToken>> Login([FromBody] UserInfo userInfo)
         {
-            var result = await _signInManager.PasswordSignInAsync(userInfo.Email, userInfo.Password, isPersistent: false, lockoutOnFailure: false);
-            if (result.Succeeded)
+            var result = await _service.PasswordSignInAsync(userInfo);
+            if (result != null && result.Succeeded)
             {
                 return BuildToken(userInfo);
             }
@@ -72,8 +80,8 @@ namespace JuntoSeguros.Controllers
         [HttpGet("Listar")]
         public ActionResult<List<ApplicationUser>> GetAllUser()
         {
-            var result = _userManager.Users;
-            
+            var result = _service.GetAllUser();
+
             result.ToList().ForEach(x => { x.PasswordHash = null; x.EmailConfirmed = false; x.SecurityStamp = null; x.ConcurrencyStamp = null; });
 
             return Ok(result.ToList());
@@ -82,20 +90,22 @@ namespace JuntoSeguros.Controllers
 
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet("BuscarPorEmail")]
-        public ActionResult<List<ApplicationUser>> FindUser(string email)
+        public ActionResult<ApplicationUser> FindUserByEmail(string email)
         {
-            var result = _userManager.Users.Where(x => x.Email == email);
+            var result = _service.FindUserByEmail(email).Result;
 
             if (result != null)
             {
-                result.ToList().ForEach(x => { x.PasswordHash = null; x.EmailConfirmed = false; x.SecurityStamp = null; x.ConcurrencyStamp = null; });
-                return Ok(result.ToList());
+                result.PasswordHash = null;
+                result.EmailConfirmed = false;
+                result.SecurityStamp = null; 
+                result.ConcurrencyStamp = null; 
+                return Ok(result);
             }
             else
-            {                
+            {
                 ModelState.AddModelError(string.Empty, "E-mail não encontrado!");
                 return BadRequest(ModelState);
-
             }
 
         }
@@ -104,16 +114,18 @@ namespace JuntoSeguros.Controllers
         [HttpGet("BuscarPorId")]
         public ActionResult<ApplicationUser> GetById(string id)
         {
-            var result = _userManager.Users.Where(x => x.Id == id);
+            var result = _service.GetById(id).Result;
 
             if (result != null)
-            {
-                result.ToList().ForEach(x => { x.PasswordHash = null; x.EmailConfirmed = false; x.SecurityStamp = null; x.ConcurrencyStamp = null; });
-
-                return Ok(result.FirstOrDefault());
+            {                
+                result.PasswordHash = null;
+                result.EmailConfirmed = false;
+                result.SecurityStamp = null;
+                result.ConcurrencyStamp = null;
+                return Ok(result);
             }
             else
-            {                
+            {
                 ModelState.AddModelError(string.Empty, "Id não encontrado!");
                 return BadRequest(ModelState);
             }
@@ -124,15 +136,13 @@ namespace JuntoSeguros.Controllers
         [HttpPost("Atualizar")]
         public async Task<ActionResult<string>> UpdateUser([FromBody] UserInfo model)
         {
-            var user = new ApplicationUser { Id = model.id, Nome = model.Nome, Cidade = model.Cidade };
-
-            var result = _userManager.Users.FirstOrDefault(x => x.Id == model.id);
+            var result = _service.GetById(model.id).Result;
 
             if (result != null)
             {
                 result.Cidade = model.Cidade;
                 result.Nome = model.Nome;
-                await _userManager.UpdateAsync(result);
+                await _service.UpdateAsync(result);
                 return Ok("Atualizado com sucesso!");
             }
             else
@@ -144,14 +154,12 @@ namespace JuntoSeguros.Controllers
 
         [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpPost("AtualizarSenha")]
-        public async Task<ActionResult<string>> UpdatePasswordUser(string id, string senhaAntiga, string novaSenha)
+        public async Task<ActionResult<string>> UpdatePasswordUser([Required]string id, string senhaAntiga, string novaSenha)
         {
-            var user = _userManager.Users.FirstOrDefault(x => x.Id == id);
-
-            if (user != null)
+            if (!string.IsNullOrEmpty(id))
             {
-                var result = await _userManager.ChangePasswordAsync(user, senhaAntiga, novaSenha);
-                if (result.Succeeded)
+                var result = await _service.UpdatePasswordUser(id, senhaAntiga, novaSenha);
+                if (result != null && result.Succeeded)
                 {
                     return Ok("Atualizado com sucesso!");
                 }
@@ -171,48 +179,23 @@ namespace JuntoSeguros.Controllers
         [HttpGet("Excluir")]
         public async Task<ActionResult<string>> DeleteUser(string id)
         {
-            var result = _userManager.Users.FirstOrDefault(x => x.Id == id);
+            var result = await _service.DeleteUser(id);
 
-            if (result != null)
+            if (result != null && result.Succeeded)
             {
-                await _userManager.DeleteAsync(result);
-
                 return Ok("Excluido com sucesso!");
             }
             else
             {
                 ModelState.AddModelError(string.Empty, "Id não encontrado!");
                 return BadRequest(ModelState);
-            }           
+            }
 
         }
 
         private UserToken BuildToken(UserInfo userInfo)
         {
-            var claims = new[]
-            {
-                new Claim(JwtRegisteredClaimNames.UniqueName, userInfo.Email),
-                new Claim("Nome", "Vaurof"),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var expiration = DateTime.UtcNow.AddHours(1);
-
-            JwtSecurityToken token = new JwtSecurityToken(
-               issuer: null,
-               audience: null,
-               claims: claims,
-               expires: expiration,
-               signingCredentials: creds);
-
-            return new UserToken()
-            {
-                Token = new JwtSecurityTokenHandler().WriteToken(token),
-                Expiration = expiration
-            };
+            return _service.BuildToken(userInfo);
         }
     }
 }
