@@ -139,9 +139,17 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "EntityFrameworkTesting.Moq": {
+              "target": "Package",
+              "version": "[1.2.3, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.2.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.13.1, )"
             },
             "xunit": {
               "target": "Package",

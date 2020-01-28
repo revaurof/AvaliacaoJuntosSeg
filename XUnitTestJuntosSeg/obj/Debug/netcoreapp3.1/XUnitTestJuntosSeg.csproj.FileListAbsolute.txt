@@ -429,3 +429,6 @@ C:\Users\renatorv\Desktop\jseg\XUnitTestJuntosSeg\obj\Debug\netcoreapp3.1\XUnitT
 C:\Users\renatorv\Desktop\jseg\XUnitTestJuntosSeg\obj\Debug\netcoreapp3.1\XUnitTestJuntosSeg.csproj.CopyComplete
 C:\Users\renatorv\Desktop\jseg\XUnitTestJuntosSeg\obj\Debug\netcoreapp3.1\XUnitTestJuntosSeg.dll
 C:\Users\renatorv\Desktop\jseg\XUnitTestJuntosSeg\obj\Debug\netcoreapp3.1\XUnitTestJuntosSeg.pdb
+C:\Users\renatorv\Desktop\jseg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\EntityFramework.Testing.Moq.dll
+C:\Users\renatorv\Desktop\jseg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\renatorv\Desktop\jseg\XUnitTestJuntosSeg\bin\Debug\netcoreapp3.1\Moq.dll

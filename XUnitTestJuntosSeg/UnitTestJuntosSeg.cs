@@ -5,31 +5,41 @@ using JuntoSeguros.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Mvc;
 using JuntoSeguros.Services;
+using Moq;
 
 namespace XUnitTestJuntosSeg
 {
 
     public class UnitTestJuntosSeg
     {
-
-        private readonly IUsuarioService _service;
         UsuariosController _controller;
-
-
-        public UnitTestJuntosSeg(IUsuarioService service)
+        public UnitTestJuntosSeg()
         {
-            _service = service;
-            _controller = new UsuariosController(_service);
+            var mockService = new Mock<IUsuarioService>();//Mock
+            _controller = new UsuariosController(mockService.Object);
         }
 
         [Fact]
-        public void UsuariosControllerGet()
+        public void Get()
         {
-            // Act
             var okResult = _controller.Get();
             // Assert
             Assert.IsType<OkObjectResult>(okResult.Result);
         }
+
+        //[Fact]
+        //public void CreateUser()
+        //{
+        //    UserInfo model = new UserInfo
+        //    {
+        //        Cidade = "Itararé",
+        //        Email = "revaurof@yahoo.com.br",
+        //        Nome = "Renato",
+        //        Password = "Re5322007!!@@"
+        //    };
+        //    var okResult = _controller.CreateUser(model);
+        //    Assert.IsType<OkObjectResult>(okResult.Result);
+        //}        
 
         [Fact]
         public void UsuariosControllerListar()
@@ -44,18 +54,18 @@ namespace XUnitTestJuntosSeg
         public void UsuariosControllerBuscarPorId()
         {
             // Act
-            var okResult = _controller.GetById("2132131");
+            var okResult = _controller.GetById("778df06e-142a-48ff-889c-102eb78c1ffb");
             // Assert
-            Assert.IsType<OkObjectResult>(okResult.Result);
+            Assert.IsNotType<BadRequestResult>(okResult.Result);
         }
 
         [Fact]
         public void UsuariosControllerBuscarPorEmail()
         {
             // Act
-            var okResult = _controller.FindUserByEmail("revaurof@yahoo.com.br");
+            var okResult = _controller.FindUserByEmail("renato@ansata.com.br");
             // Assert
-            Assert.IsType<OkObjectResult>(okResult.Result);
+            Assert.IsNotType<BadRequestResult>(okResult.Result);
         }
 
         [Fact]
@@ -64,7 +74,7 @@ namespace XUnitTestJuntosSeg
             // Act
             var okResult = _controller.DeleteUser("2132131");
             // Assert
-            Assert.IsType<OkObjectResult>(okResult.Result);
+            Assert.IsNotType<BadRequestResult>(okResult.Result);
         }
 
     }

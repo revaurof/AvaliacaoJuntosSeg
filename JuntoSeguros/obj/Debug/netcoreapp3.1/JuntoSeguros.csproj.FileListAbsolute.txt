@@ -392,7 +392,6 @@ C:\Users\renatorv\Desktop\jseg\JuntoSeguros\bin\Debug\netcoreapp3.1\runtimes\win
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.csprojAssemblyReference.cache
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\staticwebassets\JuntoSeguros.StaticWebAssets.Manifest.cache
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\staticwebassets\JuntoSeguros.StaticWebAssets.xml
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.AssemblyInfoInputs.cache
@@ -402,3 +401,4 @@ C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.dll
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.pdb
 C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\renatorv\Desktop\jseg\JuntoSeguros\obj\Debug\netcoreapp3.1\JuntoSeguros.csprojAssemblyReference.cache

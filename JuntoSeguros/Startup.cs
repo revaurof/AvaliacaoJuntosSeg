@@ -32,7 +32,7 @@ namespace JuntoSeguros
             services.AddControllers();
             services.AddTransient<IUsuarioService, UsuarioService>();
             services.AddDbContext<ApplicationDbContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
@@ -51,8 +51,17 @@ namespace JuntoSeguros
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["jwt:key"])),
                     ClockSkew = TimeSpan.Zero
                 });
-            
 
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Default Password settings.
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 4;
+                options.Password.RequiredUniqueChars = 1;
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -20,20 +20,7 @@ namespace JuntoSeguros.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
-        private readonly IUsuarioService _service;
-
-        //private readonly UserManager<ApplicationUser> _userManager;
-        //private readonly SignInManager<ApplicationUser> _signInManager;
-        //private readonly IConfiguration _configuration;
-
-        //public UsuariosController(UserManager<ApplicationUser> userManager,
-        //    SignInManager<ApplicationUser> signInManager,
-        //    IConfiguration configuration)
-        //{
-        //    _userManager = userManager;
-        //    _signInManager = signInManager;
-        //    _configuration = configuration;
-        //}      
+        private readonly IUsuarioService _service;         
         public UsuariosController(IUsuarioService service)
         {
             _service = service;
